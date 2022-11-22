@@ -20,7 +20,7 @@ class Grafo:
         return self.obter_aresta(u, v) == 1
 
     def checar_quantidade_vertices(self):
-        return self.vertices
+        return len(self.grafo)
 
     def checar_quantidade_arestas(self):
         qtd_arestas = 0
@@ -36,3 +36,6 @@ class Grafo:
 
     def obter_aresta(self, u, v):
         return self.grafo[u - 1][v - 1]
+
+    def checar_adjacencia_entre_vertices(self, u, v):
+        return self.checar_existencia_aresta(u, v);
