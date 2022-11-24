@@ -29,6 +29,10 @@ def obter_adjacencia_entre_vertices(u, v):
     print('\nChecagem de adjacência entre os vértices', u, 'e', v, ':', grafo.checar_adjacencia_entre_vertices(u, v))
 
 
+def obter_adjacencia_entre_arestas(u, v):
+    print('\nChecagem de adjacência entre as arestas', u, 'e', v, ':', grafo.checar_adjacencia_entre_vertices(u, v))
+
+
 if __name__ == '__main__':
     grafo = Grafo(int(input('Informe a quantidade de vértices de G: ')))
     main()
