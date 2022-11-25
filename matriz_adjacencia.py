@@ -44,4 +44,5 @@ class Grafo:
         return self.checar_existencia_aresta(u, v)
 
     def checar_adjacencia_entre_arestas(self, u1, v1, u2, v2):
-        return print('teste')#self.checar_existencia_aresta(u1, u2) or self.checar_existencia_aresta(u1, v2) or self.checar_existencia_aresta(v1, v2) or self.checar_existencia_aresta(v1, u2)
+        return self.checar_existencia_aresta(u1, u2) or self.checar_existencia_aresta(u1, v2) \
+               or self.checar_existencia_aresta(v1, v2) or self.checar_existencia_aresta(v1, u2)

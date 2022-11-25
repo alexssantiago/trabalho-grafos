@@ -5,6 +5,7 @@ def main():
     grafo.criar_aresta(1, 2)
     grafo.criar_aresta(2, 3)
     grafo.criar_aresta(3, 4)
+    grafo.criar_aresta(5, 2)
 
     # grafo.remover_aresta(1, 3)
     # grafo.remover_aresta(3, 4)
@@ -13,7 +14,8 @@ def main():
     grafo.obter_matriz()
 
     obter_existencia_aresta(1, 2)
-    obter_adjacencia_entre_vertices(1, 3)
+    obter_adjacencia_entre_vertices(1, 2)
+    obter_adjacencia_entre_arestas(2, 3, 5, 3)
 
     print('\nChecagem da quantidade de vértices: ', grafo.checar_quantidade_vertices())
     print('\nChecagem da quantidade de arestas: ', grafo.checar_quantidade_arestas())
@@ -29,8 +31,9 @@ def obter_adjacencia_entre_vertices(u, v):
     print('\nChecagem de adjacência entre os vértices', u, 'e', v, ':', grafo.checar_adjacencia_entre_vertices(u, v))
 
 
-def obter_adjacencia_entre_arestas(u, v):
-    print('\nChecagem de adjacência entre as arestas', u, 'e', v, ':', grafo.checar_adjacencia_entre_vertices(u, v))
+def obter_adjacencia_entre_arestas(u1, v1, u2, v2):
+    print('\nChecagem de adjacência entre as arestas (', u1, ',', v1, ') e (', u2, ',', v2, ') :',
+          grafo.checar_adjacencia_entre_arestas(u1, v1, u2, v2))
 
 
 if __name__ == '__main__':
