@@ -1,14 +1,19 @@
+import random
 from matriz_adjacencia import Grafo
 
 
 def main():
-    grafo.criar_aresta(1, 2)
-    grafo.criar_aresta(2, 3)
-    grafo.criar_aresta(3, 4)
-    grafo.criar_aresta(5, 2)
+    # grafo.criar_aresta(1, 2)
+    # grafo.criar_aresta(2, 3)
+    # grafo.criar_aresta(3, 4)
+    # grafo.criar_aresta(5, 2)
+    # grafo.criar_aresta(5, 2, 3.1)
+    criar_arestas_aleatorias()
 
     # grafo.remover_aresta(1, 3)
     # grafo.remover_aresta(3, 4)
+
+    # grafo.ponderar_arestas(3, 4, 9.5)
 
     print('\nMatriz de adjacências definida:')
     grafo.obter_matriz()
@@ -34,6 +39,12 @@ def obter_adjacencia_entre_vertices(u, v):
 def obter_adjacencia_entre_arestas(u1, v1, u2, v2):
     print('\nChecagem de adjacência entre as arestas (', u1, ',', v1, ') e (', u2, ',', v2, ') :',
           grafo.checar_adjacencia_entre_arestas(u1, v1, u2, v2))
+
+
+def criar_arestas_aleatorias():
+    qtd_vertices = grafo.checar_quantidade_vertices()
+    for v in range(qtd_vertices):
+        grafo.criar_aresta(random.randint(1, qtd_vertices), random.randint(1, qtd_vertices), round(random.random(), 1))
 
 
 if __name__ == '__main__':

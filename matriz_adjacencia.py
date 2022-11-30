@@ -4,8 +4,8 @@ class Grafo:
         self.vertices = vertices
         self.grafo = [[0] * self.vertices for i in range(self.vertices)]
 
-    def criar_aresta(self, u, v):
-        self.manipular_aresta(u, v, 1)
+    def criar_aresta(self, u, v, r=0):
+        self.manipular_aresta(u, v, 1 if r == 0 else r)
 
     def remover_aresta(self, u, v):
         if self.grafo[u - 1][v - 1] == 0:
@@ -29,7 +29,7 @@ class Grafo:
         qtd_arestas = 0
         for i in range(self.vertices):
             for y in self.grafo[i]:
-                if y == 1:
+                if y != 0:
                     qtd_arestas += 1
         return qtd_arestas
 
@@ -46,3 +46,7 @@ class Grafo:
     def checar_adjacencia_entre_arestas(self, u1, v1, u2, v2):
         return self.checar_existencia_aresta(u1, u2) or self.checar_existencia_aresta(u1, v2) \
                or self.checar_existencia_aresta(v1, v2) or self.checar_existencia_aresta(v1, u2)
+
+    def ponderar_arestas(self, u, v, r):
+        self.manipular_aresta(u, v, r)
+        print('\nPonderação de aresta (', u, ',', v, ')', ':', r)
