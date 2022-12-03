@@ -1,8 +1,9 @@
 # Trabalho prático - Bridge finding
 
-Representações
+# Representações
 
 • Representação de grafos utilizando Matriz de Adjacência
+
 • Representação de grafos utilizando Lista de Adjacência
 
 Manipulação
