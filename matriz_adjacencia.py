@@ -1,4 +1,4 @@
-class Grafo:
+class MatrizAdjacencia:
 
     def __init__(self, vertices):
         self.vertices = vertices
@@ -50,3 +50,11 @@ class Grafo:
     def ponderar_arestas(self, u, v, r):
         self.manipular_aresta(u, v, r)
         print('\nPonderação de aresta (', u, ',', v, ')', ':', r)
+
+    def checar_grafo_completo(self):
+        eh_completo = True
+        for i in range(self.vertices):
+            for y in self.grafo[i]:
+                if y == 0:
+                    return False
+        return eh_completo

@@ -1,5 +1,5 @@
 import random
-from matriz_adjacencia import Grafo
+from matriz_adjacencia import MatrizAdjacencia
 
 
 def main():
@@ -18,18 +18,39 @@ def main():
     print('\nMatriz de adjacências definida:')
     grafo.obter_matriz()
 
-    obter_existencia_aresta(1, 2)
-    obter_adjacencia_entre_vertices(1, 2)
-    obter_adjacencia_entre_arestas(2, 3, 5, 3)
+    obter_existencia_aresta_aleatoria()
+    # obter_existencia_aresta(1, 2)
+
+    obter_adjacencia_entre_vertices_aleatorios()
+    # obter_adjacencia_entre_vertices(1, 2)
+
+    # obter_adjacencia_entre_arestas(2, 3, 5, 3)
 
     print('\nChecagem da quantidade de vértices: ', grafo.checar_quantidade_vertices())
     print('\nChecagem da quantidade de arestas: ', grafo.checar_quantidade_arestas())
 
     print('\nChecagem de grafo nulo: ', grafo.checar_grafo_nulo())
+    print('\nChecagem de grafo completo: ', grafo.checar_grafo_completo())
 
 
 def obter_existencia_aresta(u, v):
     print('\nChecagem da existência de aresta (', u, ',', v, ')', ':', grafo.checar_existencia_aresta(u, v))
+
+
+def criar_arestas_aleatorias():
+    qtd_vertices = grafo.checar_quantidade_vertices()
+    for v in range(qtd_vertices):
+        grafo.criar_aresta(random.randint(1, qtd_vertices), random.randint(1, qtd_vertices), round(random.random(), 1))
+
+
+def obter_existencia_aresta_aleatoria():
+    qtd_vertices = grafo.checar_quantidade_vertices()
+    obter_existencia_aresta(random.randint(1, qtd_vertices), random.randint(1, qtd_vertices))
+
+
+def obter_adjacencia_entre_vertices_aleatorios():
+    qtd_vertices = grafo.checar_quantidade_vertices()
+    obter_adjacencia_entre_vertices(random.randint(1, qtd_vertices), random.randint(1, qtd_vertices))
 
 
 def obter_adjacencia_entre_vertices(u, v):
@@ -41,12 +62,6 @@ def obter_adjacencia_entre_arestas(u1, v1, u2, v2):
           grafo.checar_adjacencia_entre_arestas(u1, v1, u2, v2))
 
 
-def criar_arestas_aleatorias():
-    qtd_vertices = grafo.checar_quantidade_vertices()
-    for v in range(qtd_vertices):
-        grafo.criar_aresta(random.randint(1, qtd_vertices), random.randint(1, qtd_vertices), round(random.random(), 1))
-
-
 if __name__ == '__main__':
-    grafo = Grafo(int(input('Informe a quantidade de vértices de G: ')))
+    grafo = MatrizAdjacencia(int(input('Informe a quantidade de vértices de G: ')))
     main()
